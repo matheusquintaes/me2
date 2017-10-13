@@ -11,13 +11,11 @@ import './block-revealers';
 $('.owl-carousel').owlCarousel({
     loop:false,
     margin:10,
-    nav:false,
+    nav:true,
     items:1,
-    center: true
+    center: true,
+    navText: ["◀ Anterior","Próximo ▶"]
 });
-
-
-
 /* Nav */
 
 (function(){
@@ -131,9 +129,7 @@ $('.owl-carousel').owlCarousel({
 
 }());
 
-
 /* Block Reavealers */
-
 (function() { 
     var rev1 = new RevealFx(document.querySelector('#rev-1'), {
         revealSettings : {
