@@ -9,12 +9,11 @@ import './block-revealers';
 
 
 $('.owl-carousel').owlCarousel({
-    loop:false,
-    margin:10,
+    loop:true,
     nav:true,
     items:1,
     center: true,
-    navText: ["◀ Anterior","Próximo ▶"]
+    navText: [" <img src='img/back.png'/> ","<img src='img/next.png'/> "]
 });
 /* Nav */
 
