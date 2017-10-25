@@ -130,7 +130,9 @@ $('.owl-carousel').owlCarousel({
 
 /* Block Reavealers */
 (function() { 
-    var rev1 = new RevealFx(document.querySelector('#rev-1'), {
+  
+    // Títulos Top Baner
+    var revTitleTop1 = new RevealFx(document.querySelector('#rev-title-top-1'), {
         revealSettings : {
             bgcolor: '#095BB9',
             onCover: function(contentEl, revealerEl) {
@@ -138,9 +140,9 @@ $('.owl-carousel').owlCarousel({
             }
         }
     });
-    rev1.reveal();
+    revTitleTop1.reveal();
 
-    var rev2 = new RevealFx(document.querySelector('#rev-2'), {
+    var revTitleTop2 = new RevealFx(document.querySelector('#rev-title-top-2'), {
         revealSettings : {
             bgcolor: '#f3f3f3',
             delay: 250,
@@ -149,46 +151,58 @@ $('.owl-carousel').owlCarousel({
             }
         }
     });
-    rev2.reveal();
+    revTitleTop2.reveal();
 
 
-    var scrollElemToWatch_1 = document.getElementById('rev-3'),
-    watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -300),	
- 
-    rev3 = new RevealFx(scrollElemToWatch_1, {
+
+    //Sobre
+    var scrollElemToWatch_1 = document.getElementById('rev-about-img');
+    var watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -300);
+    var rev3 = new RevealFx(scrollElemToWatch_1, {
 
         revealSettings : {
             bgcolor: '#095BB9',
             direction: 'rl',
             onCover: function(contentEl, revealerEl) {
                 contentEl.style.opacity = 1;
+
             }
         }
     });
 
-    var scrollElemToWatch_2 = document.getElementById('rev-4'),
-    watcher_2 = scrollMonitor.create(scrollElemToWatch_2),	
-    
-       rev4 = new RevealFx(scrollElemToWatch_2, {
-   
-           revealSettings : {
-               bgcolor: '#095BB9',
-               direction: 'lr',
-               onCover: function(contentEl, revealerEl) {
-                   contentEl.style.opacity = 1;
-               }
-           }
-       });
-
     watcher_1.enterViewport(function() {
-        rev3.reveal();
+        rev3.reveal(); 
         watcher_1.destroy();
     });
 
+    //O que faço
+    var scrollElemToWatch_2 = document.getElementById('rev-4'),
+    watcher_2 = scrollMonitor.create(scrollElemToWatch_2),	
+    rev4 = new RevealFx(scrollElemToWatch_2, {
+
+        revealSettings : {
+            bgcolor: '#095BB9',
+            direction: 'lr',
+            onCover: function(contentEl, revealerEl) {
+                contentEl.style.opacity = 1;
+            }
+        }
+    });
     watcher_2.enterViewport(function() {
         rev4.reveal();
         watcher_2.destroy();
     });
 
+    
+    // Texto Fade-In
+    var scrollElemToWatch_5 = document.getElementById('rev-5');
+    var watcher_5 = scrollMonitor.create(scrollElemToWatch_5, -300);
+    	
+    watcher_5.enterViewport(function(){
+        console.log( $(scrollElemToWatch_5));
+        $(scrollElemToWatch_5).addClass('js-fade--complete');
+    });
+
 
 })();
+
