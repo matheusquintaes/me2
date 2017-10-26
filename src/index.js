@@ -7,7 +7,7 @@ import 'owl.carousel';
 import './block-revealers';
 
 
-
+/* Carrossel Portifólio*/
 $('.owl-carousel').owlCarousel({
     loop:true,
     nav:true,
@@ -15,8 +15,8 @@ $('.owl-carousel').owlCarousel({
     center: true,
     navText: [" <img src='img/back.png'/> ","<img src='img/next.png'/> "]
 });
-/* Nav */
 
+/* Nav */
 (function(){
 
 
@@ -132,7 +132,7 @@ $('.owl-carousel').owlCarousel({
 (function() { 
   
     // Títulos Top Baner
-    var revTitleTop1 = new RevealFx(document.querySelector('#rev-title-top-1'), {
+    var rev1 = new RevealFx(document.querySelector('#js-animate-rev-1'), {
         revealSettings : {
             bgcolor: '#095BB9',
             onCover: function(contentEl, revealerEl) {
@@ -140,9 +140,9 @@ $('.owl-carousel').owlCarousel({
             }
         }
     });
-    revTitleTop1.reveal();
+    rev1.reveal();
 
-    var revTitleTop2 = new RevealFx(document.querySelector('#rev-title-top-2'), {
+    var rev2 = new RevealFx(document.querySelector('#js-animate-rev-2'), {
         revealSettings : {
             bgcolor: '#f3f3f3',
             delay: 250,
@@ -151,14 +151,12 @@ $('.owl-carousel').owlCarousel({
             }
         }
     });
-    revTitleTop2.reveal();
-
-
+    rev2.reveal();
 
     //Sobre
-    var scrollElemToWatch_1 = document.getElementById('rev-about-img');
-    var watcher_1 = scrollMonitor.create(scrollElemToWatch_1, -300);
-    var rev3 = new RevealFx(scrollElemToWatch_1, {
+    var scrollElemToWatch_3 = document.getElementById('js-animate-rev-3');
+    var watcher_3 = scrollMonitor.create(scrollElemToWatch_3, -300);
+    var rev3 = new RevealFx(scrollElemToWatch_3, {
 
         revealSettings : {
             bgcolor: '#095BB9',
@@ -170,15 +168,15 @@ $('.owl-carousel').owlCarousel({
         }
     });
 
-    watcher_1.enterViewport(function() {
+    watcher_3.enterViewport(function() {
         rev3.reveal(); 
-        watcher_1.destroy();
+        watcher_3.destroy();
     });
 
     //O que faço
-    var scrollElemToWatch_2 = document.getElementById('rev-4'),
-    watcher_2 = scrollMonitor.create(scrollElemToWatch_2),	
-    rev4 = new RevealFx(scrollElemToWatch_2, {
+    var scrollElemToWatch_4 = document.getElementById('js-animate-rev-4'),
+    watcher_4 = scrollMonitor.create(scrollElemToWatch_4),	
+    rev4 = new RevealFx(scrollElemToWatch_4, {
 
         revealSettings : {
             bgcolor: '#095BB9',
@@ -188,21 +186,57 @@ $('.owl-carousel').owlCarousel({
             }
         }
     });
-    watcher_2.enterViewport(function() {
+    watcher_4.enterViewport(function() {
         rev4.reveal();
-        watcher_2.destroy();
+        watcher_4.destroy();
     });
-
-    
-    // Texto Fade-In
-    var scrollElemToWatch_5 = document.getElementById('rev-5');
-    var watcher_5 = scrollMonitor.create(scrollElemToWatch_5, -300);
-    	
-    watcher_5.enterViewport(function(){
-        console.log( $(scrollElemToWatch_5));
-        $(scrollElemToWatch_5).addClass('js-fade--complete');
-    });
-
 
 })();
 
+
+    
+/* Fade in Textos */
+(function() { 
+    //Sobre
+    var scrollElemToWatch_fade_1 = document.getElementById('js-animate-fade-1');
+    var watcher_fade_1 = scrollMonitor.create(scrollElemToWatch_fade_1, -300);
+        
+    watcher_fade_1.enterViewport(function(){
+        console.log( $(scrollElemToWatch_fade_1));
+        $(scrollElemToWatch_fade_1).addClass('js-fade--complete');
+    });
+
+    //o que eu Faço
+    var scrollElemToWatch_fade_2 = document.getElementById('js-animate-fade-2');
+    var watcher_fade_2 = scrollMonitor.create(scrollElemToWatch_fade_2, -300);
+        
+    watcher_fade_2.enterViewport(function(){
+        console.log( $(scrollElemToWatch_fade_2));
+        $(scrollElemToWatch_fade_2).addClass('js-fade--complete');
+    });
+
+    //Contato
+    var scrollElemToWatch_fade_3 = document.getElementById('js-animate-fade-3');
+    var watcher_fade_3 = scrollMonitor.create(scrollElemToWatch_fade_3);
+        
+    watcher_fade_3.enterViewport(function(){
+        console.log( $(scrollElemToWatch_fade_3));
+        $(scrollElemToWatch_fade_3).addClass('js-fade--complete');
+    });
+})();
+
+
+/* Scroll */
+(function() {
+
+    $('.navigation__item').on('click', function(e){
+        e.preventDefault();
+        var target = $( $(this).attr('data-navigation-link'))
+
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 500);
+    });
+    
+
+ })();
