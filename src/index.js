@@ -229,13 +229,13 @@ $('.owl-carousel').owlCarousel({
 /* Scroll */
 (function() {
 
-    $('.navigation__item').on('click', function(e){
+    $('.navigation__item, .top__link').on('click', function(e){
         e.preventDefault();
         var target = $( $(this).attr('data-navigation-link'))
 
         $('html, body').animate({
             scrollTop: target.offset().top
-        }, 500);
+        }, 800);
     });
     
 
