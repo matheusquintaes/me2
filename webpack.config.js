@@ -1,10 +1,13 @@
 const webpack = require('webpack')
 
 module.exports = {
-    entry : './src/index.js',
+    entry : {
+        index: './src/js/index.js',
+        cases: './src/js/cases.js'
+    },
     output: {
         path: __dirname + '/public',
-        filename: './bundle.js'
+        filename: './[name].bundle.js'
     },
     module: {
         rules: [
@@ -27,8 +30,6 @@ module.exports = {
                 test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
                 loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
             }
-            
-            
         ]
     },
     devServer: {
@@ -41,8 +42,5 @@ module.exports = {
         jQuery: "jquery",
         "window.jQuery": "jquery"
         })
-    ],
-    stats: { 
-        normal: true 
-    } 
+    ]
 }

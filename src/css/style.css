@@ -184,6 +184,8 @@ h1,h2,h3,h4,h5{
     height: 90vh;
 }
 
+
+
     .top__container{
         position: absolute;
         top: 50%;
@@ -291,10 +293,6 @@ h1,h2,h3,h4,h5{
     background-size: cover;
 }    
 
-.section--top-clk{
-    background: linear-gradient(90deg,#a8feff 0,#55fafd);
-    background-color: #55fafd;
-}
 .title-section{
     position: relative;
     margin: 0 0 40px 0;
@@ -1309,3 +1307,67 @@ h1,h2,h3,h4,h5{
         padding-right: 20px;
         max-width: 500px;
     }
+
+
+/* Case */
+
+.section--top-case{
+    height: 80vh;
+    margin-bottom: 20vh;
+}
+
+.section--top-clk{
+    background: linear-gradient(90deg,#41ADAF 0,#B0DEDE);
+    background-color: #B0DEDE;
+}
+
+.case__top{
+    text-align: center;
+}
+
+.case__title{
+    font-size: 60px;
+    margin-top: 30px;
+}
+
+.case__subtitle{
+    font-size: 24px;
+    font-family: 'Rubik', sans-serif;  
+    font-weight: 300;
+}
+
+.case__title-line{
+    width: 50px;
+    height: 10px;
+    background: #333333;
+    display: block;
+    border: none;
+    margin: 0px auto 30px auto;
+}
+
+.case__image{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-50%,0,0);
+}
+
+.case-content{
+    max-width: 540px;
+    margin: 160px auto;
+}
+.case-content__title{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.case-img{
+    width: 100%;
+    margin-top: -160px;
+    box-shadow: 0 1rem 2rem rgba(27,29,31,.25);
+}
+
+.main-bg{
+    background: #f1f4f6;
+}
