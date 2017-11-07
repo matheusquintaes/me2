@@ -364,7 +364,8 @@ h1,h2,h3,h4,h5{
 }
 
 .nav-bar__logo {
-    height: 35px
+    height: 35px;
+    width: 280px;
 }
 
 
@@ -1366,8 +1367,21 @@ h1,h2,h3,h4,h5{
     width: 100%;
     margin-top: -160px;
     box-shadow: 0 1rem 2rem rgba(27,29,31,.25);
+
 }
 
-.main-bg{
-    background: #f1f4f6;
+.case-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.case-contact{
+    background-color: #f1f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: calc(20vh);
 }
