@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 
+
+
+
 :after, :before {
     box-sizing: inherit;
 }
@@ -157,6 +160,10 @@ h1,h2,h3,h4,h5{
 .js-fade--complete{
     opacity: 1;
 }
+
+.text-center{
+    text-align: center;
+}
 /* ----------- header ----------- */
 
 
@@ -279,7 +286,8 @@ h1,h2,h3,h4,h5{
     }
 
 .section{
-    padding: 75px 0;
+    padding-top: 75px;
+    padding-bottom: 75px;
     position: relative;
 }
 .section--no-padding-bottom{
@@ -1240,6 +1248,7 @@ h1,h2,h3,h4,h5{
 
 
         .btn{
+            position: relative;
             padding: 15px 30px;
             color: #095BB9;
             border: 2px solid #095BB9;
@@ -1247,6 +1256,34 @@ h1,h2,h3,h4,h5{
             text-transform: uppercase;
             font-size: 20px;
             cursor: pointer;
+            -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+            background-color:transparent;
+            
+        }
+
+        .btn:hover:hover {
+            color: #fff;
+            background-color: transparent;
+        }
+        
+        .btn:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            width: 0%;
+            height: 100%;
+            top: 0;
+            left: 0;
+       
+            background-color: #095BB9;
+            -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        .btn:hover:after{
+            width: 100%;
         }
 
         .m-bottom-20{
@@ -1322,22 +1359,16 @@ h1,h2,h3,h4,h5{
     background-color: #B0DEDE;
 }
 
-.case__top{
+.case-top{
     text-align: center;
 }
 
-.case__title{
+.case-top__title{
     font-size: 60px;
     margin-top: 30px;
 }
 
-.case__subtitle{
-    font-size: 24px;
-    font-family: 'Rubik', sans-serif;  
-    font-weight: 300;
-}
-
-.case__title-line{
+.case-top__title-line{
     width: 50px;
     height: 10px;
     background: #333333;
@@ -1346,29 +1377,51 @@ h1,h2,h3,h4,h5{
     margin: 0px auto 30px auto;
 }
 
-.case__image{
+.case-top__subtitle{
+    font-size: 24px;
+    font-family: 'Rubik', sans-serif;  
+    font-weight: 300;
+}
+
+.case-top__image{
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate3d(-50%,0,0);
 }
 
-.case-content{
-    max-width: 540px;
-    margin: 160px auto;
-}
-.case-content__title{
-    text-align: center;
-    font-size: 50px;
-    margin-bottom: 30px;
+
+.case__infos{
+    display: flex;
+    padding: 100px 0;
 }
 
-.case-img{
+.case__skills{
+    flex-basis: 25%;
+    padding-left: 20px;
+}
+
+.case__skills__item{
+    font-size: 12px;
+    line-height: 35px;
+    list-style: initial;
+}
+.case__description{
+    flex-basis: 50%;
+    line-height: 35px;
+}
+
+
+.case__img{
     width: 100%;
-    margin-top: -160px;
     box-shadow: 0 1rem 2rem rgba(27,29,31,.25);
-
 }
+
+
+
+
+
+
 
 .case-btn{
     display: flex;
@@ -1376,6 +1429,8 @@ h1,h2,h3,h4,h5{
     justify-content: center;
     text-align: center;
 }
+
+
 
 .case-contact{
     background-color: #f1f4f6;
