@@ -861,10 +861,10 @@ h1,h2,h3,h4,h5{
 /*  --------------------------------  
     -------------- Work  ----------- 
     -------------------------------- */
-
+/* 
     .owl-carousel .owl-stage-outer{
         overflow: initial !important;
-    }
+    } */
 
     .owl-prev.disabled, .owl-next.disabled{
        opacity: 0,2;
@@ -913,7 +913,6 @@ h1,h2,h3,h4,h5{
         left: 0;
         background-color: #f1f4f6;
     }
-
     .work-item__bg--clk {
         background: linear-gradient(90deg,#a8feff 0,#55fafd);
         background-color: #55fafd;
@@ -923,7 +922,6 @@ h1,h2,h3,h4,h5{
         background: linear-gradient(90deg,rgb(255, 232, 117) 0,#FDD70D);
         background-color: #FDD70D;
     }
-
 
     .work-item__img{
         position: relative;
@@ -940,20 +938,9 @@ h1,h2,h3,h4,h5{
         left: 30px;
     }
 
-    .work-item__infos{
+    .work-item__name{
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        margin: 0;
-        -webkit-transform: translate3d(-50%,50%,0);
-        transform: translate3d(-50%,50%,0);
-        text-align: center;
-        pointer-events: none
-    }
-
-    .info__title{
-        position: absolute;
-        bottom: 65%;
+        bottom: 0%;
         left: 50%;
         margin: 0;
         -webkit-transform: translate3d(-50%,50%,0);
@@ -962,24 +949,36 @@ h1,h2,h3,h4,h5{
         text-align: center;
         pointer-events: none;
         line-height: 30px;
+        text-align: center;
+    }
+    .work-item__name::before{
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 36px;
+        height: 5px;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background: #333333;
     }
 
-    .info__title span {
+    .work-item__name span {
         display: block;
     }
 
-    .info__type{
+    .work-item__type{
         font-size: 18px;
         line-height: 30px;
     }
 
-    .info__skill{
+    .work-item__skill{
         font-size: 14px;
         line-height: 30px;
         
     }
     
-    .info__skill, .info__type, .btn--work{
+    .work-item__skill, .work-item__type, .btn--work{
         visibility: hidden;
         opacity: 0;
         transition: visibility 0s, opacity 0.5s linear;
@@ -1002,12 +1001,13 @@ h1,h2,h3,h4,h5{
 }
 
 @media (min-width: 768px) {
+
     .work-item {
-        max-width:600px;
+        max-width:500px;
         height: 365px
     }
 
-    .info__title{
+    .work-item__name{
         top: 50%;
         bottom: auto;
         left: -70px;
@@ -1020,28 +1020,26 @@ h1,h2,h3,h4,h5{
         line-height: .9;
         text-align: left;
     }
+
+    .work-item__name::before{
+        bottom: -30px;
+        left: 0;
+        width: 46px;
+        height: 8px;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
     .work-item:hover .work-item__img {
         -webkit-transform: translate3d(30px,-20px,0);
         transform: translate3d(30px,-20px,0)
     }
 
-    .work-item:hover .info__skill, .work-item:hover .info__type, .work-item:hover .btn--work{
+    .work-item:hover .work-item__skill, .work-item:hover .work-item__type, .work-item:hover .btn--work{
         visibility: visible;
         opacity: 1;
     }
 
-
-    .work-item__infos {
-        top: 50%;
-        bottom: auto;
-        left: 30px;
-        -webkit-transform: translate3d(0,-50%,0);
-        transform: translate3d(0,-50%,0);
-        transition: -webkit-transform .5s cubic-bezier(.165,.84,.44,1);
-        transition: transform .5s cubic-bezier(.165,.84,.44,1);
-        transition: transform .5s cubic-bezier(.165,.84,.44,1),-webkit-transform .5s cubic-bezier(.165,.84,.44,1);
-        text-align: left;
-    }
 
     .work-item__img {
         position: absolute;
@@ -1082,7 +1080,7 @@ h1,h2,h3,h4,h5{
         margin-right: 220px;
     }
 
-    .info__title{
+    .work-item__name{
         font-size: 70px;
     }
 
@@ -1091,11 +1089,11 @@ h1,h2,h3,h4,h5{
 @media (min-width: 1200px) {
 
 
-    .info__title{
+    /* .work-item__name{
         transform: translate3d(0,0,0);
         text-align: left;
-        position: initial;
-    }
+        position: initial;  
+    } */
     .work-item__bg{
         width: 480px;
         height: 420px;
@@ -1296,7 +1294,7 @@ h1,h2,h3,h4,h5{
             color: #fff
         }
 
-        .list-footer li {
+        .list-footer__item {
             display: inline-block;
             padding: 0 40px 0 0;
             list-style: none;
